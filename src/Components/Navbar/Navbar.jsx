@@ -8,16 +8,16 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div style={styles.Navbar}>
-        <h1 style={{ color: "black" }}>Tienda Sports</h1>
+        <h1 style={{ color: "white" }}>Tienda Sports</h1>
         <div style={styles.Links}>
           <NavLink activeClassName to={"/"}>
-            <h4 style={{ color: "Black", textDecoration: "none" }}>Home</h4>
+            <h4 style={{ color: "white", textDecoration: "none" }}>Home</h4>
           </NavLink>
           <NavLink activeClassName to={"/cart"}>
-            <h4 style={{ color: "Black" }}>Cart</h4>
+            <h4 style={{ color: "white" }}>Cart</h4>
           </NavLink>
           <NavLink activeClassName to={"/products"}>
-            <h4 style={{ color: "Black" }}>Products</h4>
+            <h4 style={{ color: "white" }}>Products</h4>
           </NavLink>
           <CartWidget />
         </div>

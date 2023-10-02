@@ -3,7 +3,8 @@ import React from "react";
 const Home = () => {
   return (
     <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-      <h2>Home</h2>
+      <h2 style={{color:"black"}}>Home</h2>
+      <img></img>
     </div>
   );
 };

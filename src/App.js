@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyNavbar from "./Components/Navbar/Navbar";
 import Toast from "./Components/Toast/Toast.jsx";
 
+
 function App() {
   return (
     <BrowserRouter className="App">
