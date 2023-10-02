@@ -23,7 +23,7 @@ const Products = () => {
         return (
           <div key={item.id} style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
             <Link /* state={{item: item}} */ to={`/products/${item.id}`}>{item.title}</Link>
-            <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)} />
+         
           </div>
         );
       })}

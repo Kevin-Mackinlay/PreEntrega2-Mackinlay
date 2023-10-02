@@ -6,19 +6,21 @@ import { hover } from "@testing-library/user-event/dist/hover";
 
 const Navbar = () => {
   return (
-    <div style={styles.Navbar}>
-      <h1 style={{color:"blue"}}>Tienda Sports</h1>
-      <div style={styles.Links}>
-        <NavLink  activeClassName to={"/"}>
-          <h4 style={{ color: "Blue" , textDecoration:"none"}}>Home</h4>
-        </NavLink>
-        <NavLink activeClassName to={"/cart"}>
-          <h4 style={{ color: "Blue" }}>Cart</h4>
-        </NavLink>
-        <NavLink activeClassName to={"/products"}>
-          <h4 style={{ color: "Blue" }}>Products</h4>
-        </NavLink>
-        <CartWidget />
+    <div className="navbar">
+      <div style={styles.Navbar}>
+        <h1 style={{ color: "black" }}>Tienda Sports</h1>
+        <div style={styles.Links}>
+          <NavLink activeClassName to={"/"}>
+            <h4 style={{ color: "Black", textDecoration: "none" }}>Home</h4>
+          </NavLink>
+          <NavLink activeClassName to={"/cart"}>
+            <h4 style={{ color: "Black" }}>Cart</h4>
+          </NavLink>
+          <NavLink activeClassName to={"/products"}>
+            <h4 style={{ color: "Black" }}>Products</h4>
+          </NavLink>
+          <CartWidget />
+        </div>
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { getItemById } from "../../Helpers/Items";
+import ItemCount from "../ItemCount/ItemCount";
 
 const Item = () => {
   const { itemId } = useParams();
@@ -17,11 +18,12 @@ const Item = () => {
         {/* <img src={product.url} alt={product.title} /> */}
         <div>
           <h2>
-             <p>{product.title}</p>
+            <p>{product.title}</p>
           </h2>
           <h4>Precio $ {product.precio}</h4>
           {/* <img>Image {product.img}</img> */}
-          <h4>{product.descripcion}</h4>
+          <p>{product.descripcion}</p>
+          <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)} />
         </div>
       </div>
     </>

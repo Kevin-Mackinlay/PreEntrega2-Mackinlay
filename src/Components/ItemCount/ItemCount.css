@@ -1,6 +1,14 @@
 .controles{
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
     
-    
+}
+
+.buttonDos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
