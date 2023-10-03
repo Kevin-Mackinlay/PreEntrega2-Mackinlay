@@ -10,10 +10,15 @@ import Toast from "./Components/Toast/Toast.jsx";
 
 
 function App() {
+
+  // const eliminarProducto = (id) => {
+  //   const productCart = cart.filter((product) => product.id !== id)
+  //   SetCart (nuevoCart)
+  // }
   return (
     <BrowserRouter className="App">
       <MyNavbar />
-
+{/* <CartContext.Provider value={{ProductsCart:Cart, agregarProduct:SpeechRecognitionAlternative, eliminarProduct}}> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<Products />} />
@@ -21,6 +26,7 @@ function App() {
         <Route path="/products/:itemId" element={<Item />} />
       </Routes>
     </BrowserRouter>
+    // </CartContext.Provider>
   );
 }
 
