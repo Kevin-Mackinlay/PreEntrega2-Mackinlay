@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useContext} from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { getItemById } from "../../Helpers/Items";
 import ItemCount from "../ItemCount/ItemCount";
-import Items from "../../Helpers/Items"
+import {Items} from "../../Helpers/Items";
 import { CartContext } from "../Context/CartContext";
 
 const Item = () => {

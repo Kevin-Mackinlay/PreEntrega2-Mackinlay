@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useItems } from "../../Hooks/useItems";
 import { items } from "../../Helpers/Items";
 import ItemCount from "../../Components/ItemCount/ItemCount";
+import Cart from "../Cart/Cart";
 
 
 
@@ -27,6 +28,7 @@ const Products = () => {
           </div>
         );
       })}
+      <Cart/>
     </>
   );
 };
