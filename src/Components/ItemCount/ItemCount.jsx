@@ -1,9 +1,15 @@
 import './ItemCount.css';
-import {useState} from 'react'
+import {useContext, useState} from 'react'
+import {items} from '../../Helpers/Items'
+import { useLocation } from 'react-router-dom';
+import { CartContext } from '../Context/CartContext';
 
 const ItemCount = ({stock, initial, onAdd}) => {
     const [quantity, setQuantity] = useState(initial)
-
+    const location = useLocation()
+    const producto = location.state.item
+   const {agregarProduct} = useContext(CartContext)
+   //funcion llamar al agregar producto y lo que agrega sea la variable producto y agrega cantidad
     const increment = () => {
         if(quantity < stock) {
             setQuantity(quantity + 1)

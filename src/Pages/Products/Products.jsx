@@ -22,13 +22,14 @@ const Products = () => {
       </div>
       {items.map((item) => {
         return (
-          <div key={item.id} style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-            <Link /* state={{item: item}} */ to={`/products/${item.id}`}>{item.title}</Link>
-         
+          //agregar mas divs para agregar mas estilos
+          <div  key={item.id} style={{ display: "flex", flexDirection: "row", justifyContent: "center", }}>
+            { <Link state={{item: item}}  to={`/products/${item.id}`}>{item.title}</Link> }
+        
           </div>
         );
       })}
-      <Cart/>
+    
     </>
   );
 };
