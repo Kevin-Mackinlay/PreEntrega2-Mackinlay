@@ -33,7 +33,7 @@ const Item = () => {
           <p>{product.descripcion}</p>
           <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)} />
         </article>
-        <button style={{
+        {/* {/* <button style={{
           backgroundColor:"red",
           color:"white",
           borderRadius:"5px",
@@ -41,8 +41,8 @@ const Item = () => {
           cursor:"pointer",
           border:"none",
           margin:"10px"
-        }} onClick={() => agregarProducto(oldData => [...oldData, product ] )}>Agregar al Cart</button>
-      </div>
+        }} onClick={() => agregarProducto(oldData => [...oldData, product ] )}>Agregar al Cart</button> */}
+      </div> 
     </>
   );
 };

@@ -12,7 +12,7 @@ function LoadingComponent () {
     }, [ ]);
 
 return <>
-{loading ? <h2>Loadin </h2> : <h3>Loaded!</h3>}
+{loading ? <h2>Loading </h2> : <h3>Loaded!</h3>}
 </>
 }
 

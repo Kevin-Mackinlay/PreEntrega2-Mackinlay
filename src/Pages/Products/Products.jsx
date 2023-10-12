@@ -23,13 +23,15 @@ const Products = () => {
 // console.log(document.data())
 // })
 
-const [items, setItems] = useState()
+const [items, setItems] = useState([])
 
 
 useEffect(() => {
 const db = getFirestore();
+//PARA USAR EN CASO QUE NECESITE LLAMAR ALGO ESPECIFICO O0 
+// const myquery = query(collection(db, 'items'), where("categoria", "==", "ropa"), limit(1))
 const itemCollection = collection(db, "Items")
-getDocs(itemCollection).then(res => {
+getDocs(itemCollection).then(res => 
  setItems(res.docs.map((doc) => ({ id: doc.id, ...doc.data() } ))))
 
 }, [])
