@@ -43,18 +43,42 @@ getDocs(itemCollection).then(res =>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
         <h2>Products</h2>
       </div>
-      {items.map((item) => {
+      <div style={{display: "flex"}}>
+      { 
+      items.length > 0 ?
+      items.map((item) => {
         return (
-          //agregar mas divs para agregar mas estilos
-          <div  key={item.id} style={{ display: "flex", flexDirection: "row", justifyContent: "center", }}>
-            { <Link state={{item: item}}  to={`/products/${item.id}`}>{item.title}</Link> }
-        
-          </div>
-        );
-      })}
-    
+              <Link style={styles.Products} key={item.id} state={{item: item}} to={`/products/${item.id}`}>{item.title}</Link>
+        )
+      })
+       : 
+        <div style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
+        <h2>Cargando...</h2>
+      </div>
+      }
+    </div>
     </>
   );
 };
 
 export default Products;
+
+
+const styles = {
+  Products: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "50px",
+    width: "80%",
+    borderRadius: "10px",
+    border: "1px solid black",
+    margin: "5px",
+    padding: "5px",
+    cursor: "pointer",
+    color: "white",
+    textDecoration: "none",
+    backgroundColor: "blue",
+  },
+};
