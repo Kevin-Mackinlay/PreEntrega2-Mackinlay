@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useItems } from "../../Hooks/useItems";
 import { items } from "../../Helpers/Items";
 import ItemCount from "../../Components/ItemCount/ItemCount";
 import Cart from "../Cart/Cart";
+import {collection,  doc, getDocs, getFirestore } from 'firebase/firestore';
+
 
 
 
@@ -13,6 +15,25 @@ const Products = () => {
     // const items = useItems()
     // console.log(items)
   
+
+
+//para un documento a la vez
+// const ItemRef = doc(db , 'Items', )
+// getDoc(ItemRef).then((documento) => {
+// console.log(document.data())
+// })
+
+const [items, setItems] = useState()
+
+
+useEffect(() => {
+const db = getFirestore();
+const itemCollection = collection(db, "Items")
+getDocs(itemCollection).then(res => {
+ setItems(res.docs.map((doc) => ({ id: doc.id, ...doc.data() } ))))
+
+}, [])
+
 
   return (
     //listado de productos
