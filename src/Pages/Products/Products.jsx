@@ -40,23 +40,25 @@ getDocs(itemCollection).then(res =>
   return (
     //listado de productos
     <>
+   
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <h2>Products</h2>
+        <h2 style={{ color: "blue" }}>Products</h2>
       </div>
-      <div style={{display: "flex"}}>
-      { 
-      items.length > 0 ?
-      items.map((item) => {
-        return (
-              <Link style={styles.Products} key={item.id} state={{item: item}} to={`/products/${item.id}`}>{item.title}</Link>
-        )
-      })
-       : 
-        <div style={{display:"flex", flexDirection:"row", justifyContent:"center"}}>
-        <h2>Cargando...</h2>
+      <div style={{ display: "flex" }}>
+        {items.length > 0 ? (
+          items.map((item) => {
+            return (
+              <Link style={styles.Products} key={item.id} state={{ item: item }} to={`/products/${item.id}`}>
+                {item.title}
+              </Link>
+            );
+          })
+        ) : (
+          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+            <h2 style={{color:"blue"}} >Cargando...</h2>
+          </div>
+        )}
       </div>
-      }
-    </div>
     </>
   );
 };

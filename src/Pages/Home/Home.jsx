@@ -1,12 +1,17 @@
 import React from "react";
+import FormularioLogin from "../../Components/Formularios/FormularioLogin";
+
 
 const Home = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-      <h2 style={{color:"black"}}>Home</h2>
-      <form1></form1>
-      <form2></form2>
-    </div>
+    <>
+      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+        <h2 style={{ color: "blue" }}>Home</h2>
+      </div>
+      <div>
+        <FormularioLogin />
+      </div>
+    </>
   );
 };
 

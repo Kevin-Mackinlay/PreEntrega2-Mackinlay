@@ -3,11 +3,12 @@ import React, { useContext, useState } from "react";
 import { items } from "../../Helpers/Items";
 import { CartContext } from "../../Components/Context/CartContext";
 
+
 const Cart = () => {
   const { productsCarrito, eliminarProduct } = useContext(CartContext);
-  const [nombre, setNombre] = useState('kevin')
-  const [email, setEmail] = useState('kevin@gmail.com')
-  const [numero, setNumero] = useState(15409387)
+  const [nombre, setNombre] = useState("kevin");
+  const [email, setEmail] = useState("kevin@gmail.com");
+  const [numero, setNumero] = useState(15409387);
   const dataBase = getFirestore();
   const ordersCollection = collection(dataBase, "orders");
 
@@ -51,14 +52,28 @@ const Cart = () => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <h2>Cart</h2>
+        <h2 style={{color:"blue"}}>Cart</h2>
       </div>
+<div>
+  
+</div>
 
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <input type={"text"} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre"></input>
-        <input type={Number} onChange={(e) => setNumero(e.target.value)} placeholder="Numero"></input>
-        <input type={"text"} onChange={(e) => setEmail(e.target.value)} placeholder="Email"></input>
-      </div>
+
+{/* 
+      <form style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <label>
+          <input type={"text"} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre"></input>
+        </label>
+        <label>
+          <input type={Number} onChange={(e) => setNumero(e.target.value)} placeholder="Numero"></input>
+        </label>
+        <label>
+          <input type={"text"} onChange={(e) => setEmail(e.target.value)} placeholder="Email"></input>
+        </label>
+        <label>
+          <input type="submit" value="Submit"/>
+        </label>
+      </form> */}
       <div style={styles.buttonContainer}>
         <button style={styles.Products} onClick={nuevaOrden}>
           Comprar
@@ -67,7 +82,7 @@ const Cart = () => {
           Actualizar
         </button>
         <button style={styles.Products} onClick={actualizarOrdenPorLotes}>
-          Actualizar
+          Actualizar Orden por Lotes
         </button>
       </div>
     </>
