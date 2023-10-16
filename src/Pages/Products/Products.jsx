@@ -42,7 +42,7 @@ getDocs(itemCollection).then(res =>
     <>
    
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <h2 style={{ color: "blue" }}>Products</h2>
+        <h2 style={{ color: "black" }}>Products</h2>
       </div>
       <div style={{ display: "flex" }}>
         {items.length > 0 ? (
@@ -57,7 +57,7 @@ getDocs(itemCollection).then(res =>
           })
         ) : (
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-            <h2 style={{color:"blue"}} >Cargando...</h2>
+            <h2 style={{color:"black"}} >Cargando...</h2>
           </div>
         )}
       </div>

@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import { useLocation, useParams } from "react-router-dom";
 import { getItemById } from "../../Helpers/Items";
 import ItemCount from "../ItemCount/ItemCount";
-import {Items} from "../../Helpers/Items";
+import { Items } from "../../Helpers/Items";
 import { CartContext } from "../Context/CartContext";
-import "./Item.css"
+import "./Item.css";
 
 const Item = () => {
   const { itemId } = useParams();
@@ -14,7 +14,7 @@ const Item = () => {
         const location = useLocation()
         const product = location.state.item
     */
-   const {agregarProducto} = useContext(CartContext)
+  const { agregarProducto } = useContext(CartContext);
 
   return (
     <>
@@ -31,6 +31,7 @@ const Item = () => {
             <p>Precio: $ {product.precio}</p>
             <p>Stock disponible: {product.stock}</p>
           </section>
+          <p>Descripción:</p>
           <p>{product.descripcion}</p>
           <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)} />
         </article>

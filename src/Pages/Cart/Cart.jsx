@@ -52,7 +52,7 @@ const Cart = () => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <h2 style={{color:"blue"}}>Cart</h2>
+        <h2 style={{color:"black"}}>Cart</h2>
       </div>
 <div>
   
