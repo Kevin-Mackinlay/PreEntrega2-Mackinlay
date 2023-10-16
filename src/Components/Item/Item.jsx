@@ -4,6 +4,7 @@ import { getItemById } from "../../Helpers/Items";
 import ItemCount from "../ItemCount/ItemCount";
 import {Items} from "../../Helpers/Items";
 import { CartContext } from "../Context/CartContext";
+import "./Item.css"
 
 const Item = () => {
   const { itemId } = useParams();
@@ -19,15 +20,15 @@ const Item = () => {
     <>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
         {/* <img src={product.url} alt={product.title} /> */}
-        <article className="CardItem">
-          <header>
-            <h2 className="ItemHeader">{product.title}</h2>
+        <article className="e-card">
+          <header className=".e-card-header">
+            <h2>{product.title}</h2>
           </header>
           <picture>
-            <img style={{width:"200px", height:"200"}} src={product.img}  className="ItemImg" />
+            <img style={{ width: "200px", height: "200" }} src={product.img} className="ItemImg" />
           </picture>
-          <section>
-            <p>Precio $ {product.precio}</p>
+          <section style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <p>Precio: $ {product.precio}</p>
             <p>Stock disponible: {product.stock}</p>
           </section>
           <p>{product.descripcion}</p>
@@ -42,7 +43,7 @@ const Item = () => {
           border:"none",
           margin:"10px"
         }} onClick={() => agregarProducto(oldData => [...oldData, product ] )}>Agregar al Cart</button> */}
-      </div> 
+      </div>
     </>
   );
 };

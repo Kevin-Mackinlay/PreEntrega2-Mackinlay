@@ -50,6 +50,8 @@ getDocs(itemCollection).then(res =>
             return (
               <Link style={styles.Products} key={item.id} state={{ item: item }} to={`/products/${item.id}`}>
                 {item.title}
+                
+                <button style={{backgroundColor:"orange"}}>ver más</button>
               </Link>
             );
           })
@@ -69,7 +71,8 @@ export default Products;
 const styles = {
   Products: {
     display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
+    flexWrap:"nowrap",
     justifyContent: "center",
     alignItems: "center",
     height: "50px",
@@ -81,6 +84,7 @@ const styles = {
     cursor: "pointer",
     color: "white",
     textDecoration: "none",
-    backgroundColor: "blue",
+    backgroundColor: "rgba(0, 136, 255 , 0.594)",
   },
+ 
 };

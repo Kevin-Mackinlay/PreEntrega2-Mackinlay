@@ -1,4 +1,40 @@
-img{
-    width: 200px;
-    height: 300px;
+
+.e-card{
+    border-color: rgb(69, 67, 67);
+    border: 4px;
+   width: 300PX;
+    border-radius: 8px;
+      display: flex;
+    flex-direction: column;
+     justify-content: center;
+      background-color:rgba(0, 136, 255 , 0.594);
+    padding-left: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.e-card .e-card-header {
+  
+    font-family: cursive;
+    font-style: italic;
+}
+
+.e-card .e-card-content {
+    font-size: 20px;
+    color: gray;
+    line-height: initial;
+    font-weight: normal;
+}
+
+.e-card .e-card-separator {
+   padding-bottom: 30px;
+}
+
+.e-card .e-card-header .e-card-header-image  {
+    height: 48px;
+    width: 48px;
+}
+
+p{
+    font-weight: bold ;
 }

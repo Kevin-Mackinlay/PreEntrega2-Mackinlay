@@ -106,7 +106,7 @@ const styles = {
     cursor: "pointer",
     color: "white",
     textDecoration: "none",
-    backgroundColor: "blue",
+    backgroundColor: "rgba(0, 136, 255, 0.594)",
   },
   buttonContainer: {
     display: "flex",
