@@ -3,12 +3,17 @@ import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "../CartWidget/CartWidget";
 import { hover } from "@testing-library/user-event/dist/hover";
+import Images from "../../Helpers/Images";
 
 const Navbar = () => {
   return (
     <div className="navbar">
       <div style={styles.Navbar}>
-        <h1>SHOES STORE</h1>
+        <div style={{display:"flex", flexDirection:"column", height:"200px", paddingBottom:"20px"}}>
+          <h1>SHOES STORE</h1>
+          <Images/>
+        </div>
+
         <div style={styles.Links}>
           <NavLink activeClassName to={"/"}>
             <h4 style={{ color: "white", textDecoration: "none" }}>Home</h4>
@@ -35,7 +40,6 @@ const styles = {
     alignItems: "center",
     padding: "2rem",
     borderBottom: "1px solid black",
-    
   },
   Links: {
     width: "30%",
