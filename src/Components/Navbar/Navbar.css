@@ -1,20 +1,27 @@
-.links{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-.active{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
-    background-color: rgb(44, 177, 213);
+.active {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  background-color: rgb(32, 163, 199);
+  border-radius: 8px;
 }
 
-.navbar{
-    background-color: rgba(0, 136, 255 , 0.594);
+.navbar {
+  background-color: rgba(6, 47, 212, 0.611);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  font-family: cursive;
+align-items: center;
 }

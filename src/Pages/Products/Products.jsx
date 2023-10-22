@@ -4,43 +4,19 @@ import { useItems } from "../../Hooks/useItems";
 import { items } from "../../Helpers/Items";
 import ItemCount from "../../Components/ItemCount/ItemCount";
 import Cart from "../Cart/Cart";
-import {collection,  doc, getDocs, getFirestore } from 'firebase/firestore';
-
-
-
+import { collection, doc, getDocs, getFirestore } from "firebase/firestore";
 
 const Products = () => {
-  //EJEMPLO UTILIZANDO HOOK CON FETCH PARA TRAER LOS ITEMS
+  const [items, setItems] = useState([]);
 
-    // const items = useItems()
-    // console.log(items)
-  
-
-
-//para un documento a la vez
-// const ItemRef = doc(db , 'Items', )
-// getDoc(ItemRef).then((documento) => {
-// console.log(document.data())
-// })
-
-const [items, setItems] = useState([])
-
-
-useEffect(() => {
-const db = getFirestore();
-//PARA USAR EN CASO QUE NECESITE LLAMAR ALGO ESPECIFICO O0 
-// const myquery = query(collection(db, 'items'), where("categoria", "==", "ropa"), limit(1))
-const itemCollection = collection(db, "Items")
-getDocs(itemCollection).then(res => 
- setItems(res.docs.map((doc) => ({ id: doc.id, ...doc.data() } ))))
-
-}, [])
-
+  useEffect(() => {
+    const db = getFirestore();
+    const itemCollection = collection(db, "Items");
+    getDocs(itemCollection).then((res) => setItems(res.docs.map((doc) => ({ id: doc.id, ...doc.data() }))));
+  }, []);
 
   return (
-    //listado de productos
     <>
-   
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
         <h2 style={{ color: "black" }}>Products</h2>
       </div>
@@ -49,15 +25,15 @@ getDocs(itemCollection).then(res =>
           items.map((item) => {
             return (
               <Link style={styles.Products} key={item.id} state={{ item: item }} to={`/products/${item.id}`}>
-                {item.title}
-                
-                <button style={{backgroundColor:"orange"}}>ver más</button>
+                <h3>{item.title}</h3>
+                <img src={item.img} alt={item.title} style={{ width: "120px", height: "120px", borderRadius: "8px" }} />
+                <button style={{ backgroundColor: "orange" }}>ver más</button>
               </Link>
             );
           })
         ) : (
           <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-            <h2 style={{color:"black"}} >Cargando...</h2>
+            <h2 style={{ color: "black", alignContent: "center" }}>Cargando...</h2>
           </div>
         )}
       </div>
@@ -67,16 +43,15 @@ getDocs(itemCollection).then(res =>
 
 export default Products;
 
-
 const styles = {
   Products: {
     display: "flex",
     flexDirection: "column",
-    flexWrap:"nowrap",
+    flexWrap: "nowrap",
     justifyContent: "center",
     alignItems: "center",
-    height: "50px",
-    width: "80%",
+    height: "250px",
+    width: "100%",
     borderRadius: "10px",
     border: "1px solid black",
     margin: "5px",
@@ -84,7 +59,8 @@ const styles = {
     cursor: "pointer",
     color: "white",
     textDecoration: "none",
-    backgroundColor: "rgba(0, 136, 255 , 0.594)",
+    backgroundColor: "rgba(6, 47, 212, 0.611)",
+
+    gap: "10px",
   },
- 
 };

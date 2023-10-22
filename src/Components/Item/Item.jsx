@@ -18,21 +18,21 @@ const Item = () => {
 
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
+      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems:"center"}}>
         {/* <img src={product.url} alt={product.title} /> */}
         <article className="e-card">
           <header className=".e-card-header">
             <h2>{product.title}</h2>
           </header>
           <picture>
-            <img style={{ width: "200px", height: "200" }} src={product.img} className="ItemImg" />
+            <img src={product.img} className="ItemImg" />
           </picture>
-          <section style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <p>Precio: $ {product.precio}</p>
+          <section style={{ display: "flex", flexDirection: "column", justifyContent: "center" , alignItems:"center"}}>
             <p>Stock disponible: {product.stock}</p>
+            <p>{product.descripcion}</p>
+            <p>Precio: $ {product.precio}</p>
           </section>
-          <p>Descripción:</p>
-          <p>{product.descripcion}</p>
+
           <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)} />
         </article>
         {/* {/* <button style={{

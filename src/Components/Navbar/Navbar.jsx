@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div style={styles.Navbar}>
-        <h1 style={{ color: "white" }}>Tienda Sports</h1>
+        <h1>SHOES STORE</h1>
         <div style={styles.Links}>
           <NavLink activeClassName to={"/"}>
             <h4 style={{ color: "white", textDecoration: "none" }}>Home</h4>
