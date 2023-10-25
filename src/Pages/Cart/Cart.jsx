@@ -5,7 +5,8 @@ import { CartContext } from "../../Components/Context/CartContext";
 
 
 const Cart = () => {
-  const { productsCarrito, eliminarProduct } = useContext(CartContext);
+  const { productsCart } = useContext(CartContext);
+ 
   const [nombre, setNombre] = useState("kevin");
   const [email, setEmail] = useState("kevin@gmail.com");
   const [numero, setNumero] = useState(15409387);
@@ -13,14 +14,14 @@ const Cart = () => {
   const ordersCollection = collection(dataBase, "orders");
 
   const nuevaOrden = () => {
-    const total = productsCarrito.reduce((acum, item) => acum + item.precio, 0);
+    const total = productsCart.reduce((acum, item) => acum + item.precio, 0);
     const orderData = {
       buyer: {
         name: "Carlos",
         number: 15308455,
         email: "carlos@gmail.com",
       },
-      items: [...productsCarrito],
+      items: [...productsCart],
       Total: total,
     };
 
@@ -52,14 +53,19 @@ const Cart = () => {
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <h2 style={{color:"black"}}>Cart</h2>
+        <h2 style={{ color: "black" }}>Cart</h2>
       </div>
-<div>
-  
-</div>
+      <div>
+        <ul>
+          {productsCart.map((item) => (
+            <li key={item.id}>
+              {item.title} - Quantity: {item.quantity} - Price: ${item.precio * item.quantity}
+            </li>
+          ))}
+        </ul>
+      </div>
 
-
-{/* 
+      {/* 
       <form style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
         <label>
           <input type={"text"} onChange={(e) => setNombre(e.target.value)} placeholder="Nombre"></input>

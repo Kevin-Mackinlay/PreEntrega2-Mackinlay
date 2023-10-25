@@ -13,13 +13,20 @@ const Item = () => {
   /*
         const location = useLocation()
         const product = location.state.item
-    */
-  const { agregarProducto } = useContext(CartContext);
+  //   */
+  // const { agregarProduct } = useContext(CartContext);
 
+  // const handleAddToCart = (quantity) => {
+  //   agregarProduct(product, quantity);
+  // }
+
+const onAdd = (cantidad) => {
+  console.log('Compraste ${cantidad} productos')
+}
   return (
     <>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems:"center"}}>
-        {/* <img src={product.url} alt={product.title} /> */}
+     
         <article className="e-card">
           <header className=".e-card-header">
             <h2>{product.title}</h2>
@@ -33,17 +40,9 @@ const Item = () => {
             <p>Precio: $ {product.precio}</p>
           </section>
 
-          <ItemCount initial={1} stock={10} onAdd={(quantity) => console.log("cantidad agregada", quantity)} />
+          <ItemCount initial={1}  stock={product.stock} onAdd={onAdd} />
         </article>
-        {/* {/* <button style={{
-          backgroundColor:"red",
-          color:"white",
-          borderRadius:"5px",
-          padding:"10px",
-          cursor:"pointer",
-          border:"none",
-          margin:"10px"
-        }} onClick={() => agregarProducto(oldData => [...oldData, product ] )}>Agregar al Cart</button> */}
+       
       </div>
     </>
   );

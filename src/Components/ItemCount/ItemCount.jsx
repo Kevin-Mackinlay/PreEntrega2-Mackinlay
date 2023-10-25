@@ -22,6 +22,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         }
     }
 
+    const handleAddToCart = () => {
+        agregarProduct(producto, quantity);
+    };
+
     return(
         <div className='contador'>
             <div className='controles'>
@@ -31,7 +35,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
             </div>
             <div className='buttonDos'>
-                <button onClick={() => onAdd(quantity)} disabled={!stock}>
+                <button onClick={handleAddToCart} disabled={!stock}>
                     Agregar al carrito
                 </button>
             </div>
@@ -39,4 +43,4 @@ const ItemCount = ({stock, initial, onAdd}) => {
     )
 }
 
-export default ItemCount
+export default ItemCount;

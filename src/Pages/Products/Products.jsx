@@ -25,8 +25,8 @@ const Products = () => {
           items.map((item) => {
             return (
               <Link style={styles.Products} key={item.id} state={{ item: item }} to={`/products/${item.id}`}>
+                <img src={item.img} alt={item.title} style={{ width: "120px", height: "120px", borderRadius: "8px", borderColor: "black" }} />
                 <h3>{item.title}</h3>
-                <img src={item.img} alt={item.title} style={{ width: "120px", height: "120px", borderRadius: "8px" }} />
                 <button style={{ backgroundColor: "orange" }}>ver más</button>
               </Link>
             );
