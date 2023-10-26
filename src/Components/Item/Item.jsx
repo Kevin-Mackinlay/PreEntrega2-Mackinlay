@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { getItemById } from "../../Helpers/Items";
 import ItemCount from "../ItemCount/ItemCount";
 import { Items } from "../../Helpers/Items";
@@ -9,24 +9,14 @@ import "./Item.css";
 const Item = () => {
   const { itemId } = useParams();
   const product = getItemById(itemId);
-  //EJEMPLO UTILIZANDO HOOK CON FETCH PARA TRAER LOS ITEMS
-  /*
-        const location = useLocation()
-        const product = location.state.item
-  //   */
-  // const { agregarProduct } = useContext(CartContext);
+  const [cantidadAgregada, setCantidadAgregada] = useState("");
+  const onAdd = (cantidad) => {
+    setCantidadAgregada(cantidad);
+  };
 
-  // const handleAddToCart = (quantity) => {
-  //   agregarProduct(product, quantity);
-  // }
-
-const onAdd = (cantidad) => {
-  console.log('Compraste ${cantidad} productos')
-}
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center", alignItems:"center"}}>
-     
+      <div style={styles.div}>
         <article className="e-card">
           <header className=".e-card-header">
             <h2>{product.title}</h2>
@@ -34,18 +24,51 @@ const onAdd = (cantidad) => {
           <picture>
             <img src={product.img} className="ItemImg" />
           </picture>
-          <section style={{ display: "flex", flexDirection: "column", justifyContent: "center" , alignItems:"center"}}>
+          <section style={styles.section}>
             <p>Stock disponible: {product.stock}</p>
             <p>{product.descripcion}</p>
             <p>Precio: $ {product.precio}</p>
+
+            {/* {cantidadAgregada === "" ? (
+              <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+            ) : (
+              <Link to="/cart" style={styles.Link}>
+                {" "}
+                Terminar Compra
+              </Link>
+            )} */}
           </section>
 
-          <ItemCount initial={1}  stock={product.stock} onAdd={onAdd} />
+          <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
         </article>
-       
       </div>
     </>
   );
 };
 
 export default Item;
+
+const styles = {
+  div:{
+     display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  section: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  Link: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    background: "orange",
+    width: "150px",
+    textDecoration:"none",
+    fontWeight:"500"
+  },
+};

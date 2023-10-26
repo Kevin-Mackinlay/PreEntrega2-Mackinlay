@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyNavbar from "./Components/Navbar/Navbar";
 import Toast from "./Components/Toast/Toast.jsx";
 import { CartProvider } from "./Components/Context/CartContext.jsx";
+import ItemDetail from "./Components/ItemDetail/ItemDetail.jsx";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/products/:itemId" element={<Item />} />
           <Route path="/cart" element={<Cart />} />
+
+          {/* <Route path='/checkout' element={<Checkout/>}/> */}
+          {/* <Route path="*" element={<h1>404 NOT FOUND</h1>} /> */}
         </Routes>
       </CartProvider>
     </BrowserRouter>

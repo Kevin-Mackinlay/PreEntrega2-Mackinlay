@@ -17,23 +17,23 @@ const Products = () => {
 
   return (
     <>
-      <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-        <h2 style={{ color: "black" }}>Products</h2>
+      <div style={styles.div}>
+        <h2 style={styles.h2}>Products</h2>
       </div>
       <div style={{ display: "flex" }}>
         {items.length > 0 ? (
           items.map((item) => {
             return (
               <Link style={styles.Products} key={item.id} state={{ item: item }} to={`/products/${item.id}`}>
-                <img src={item.img} alt={item.title} style={{ width: "120px", height: "120px", borderRadius: "8px", borderColor: "black" }} />
+                <img src={item.img} alt={item.title} style={styles.img} />
                 <h3>{item.title}</h3>
-                <button style={{ backgroundColor: "orange" }}>ver más</button>
+                <button style={styles.button}>ver más</button>
               </Link>
             );
           })
         ) : (
-          <div style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>
-            <h2 style={{ color: "black", alignContent: "center" }}>Cargando...</h2>
+          <div style={styles.div}>
+            <h2 style={styles.h2}>Cargando...</h2>
           </div>
         )}
       </div>
@@ -44,6 +44,26 @@ const Products = () => {
 export default Products;
 
 const styles = {
+  h2: {
+    color: "black",
+    alignContent: "center",
+  },
+  button: {
+    backgroundColor: "orange",
+  },
+  img: {
+    width: "120px",
+    height: "120px",
+    borderRadius: "8px",
+    borderColor: "black",
+  },
+  div: {
+    display: "flex",
+    flexDirection: "column",
+    flexWrap: "nowrap",
+    justifyContent: "center",
+    alignItems: "center",
+  },
   Products: {
     display: "flex",
     flexDirection: "column",
@@ -60,7 +80,6 @@ const styles = {
     color: "white",
     textDecoration: "none",
     backgroundColor: "rgba(6, 47, 212, 0.611)",
-
     gap: "10px",
   },
 };
